@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to right, #c1fff2, #adf6b1);
+}
+
+#calc {
+  width: 65vw;
+  height: 80vh;
+  margin: auto;
+  margin-top: 5%;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+#display {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  text-align: center;
+  height: 60vh;
+}
+
+#buttons > div {
+  background-color: rgba(17, 192, 188, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 1px white;
+}
+#buttons > div:hover {
+  background-color: rgba(17, 192, 188, 0.7);
+}
+.span-2 {
+  grid-column: span 2;
+}
