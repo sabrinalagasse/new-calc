@@ -24,10 +24,31 @@ class Calculator {
     this.currentOperand += number.toString();
   }
   calculate() {
-    alert("calculating!");
+    let prev = parseFloat(this.prevOperand);
+    let current = parseFloat(this.currentOperand);
+    let result;
+
+    switch (this.operation) {
+      case "÷":
+        result = prev / current;
+        break;
+      case "x":
+        result = prev * current;
+        break;
+      case "+":
+        result = prev + current;
+        alert(result);
+        break;
+      case "-":
+        result = prev - current;
+        break;
+    }
+    this.prevOperand = "";
+    this.currentOperand = result;
   }
   chooseOperation(operation) {
-    this.operation = operation;
+    this.operation = operation.toString();
+    console.log("operation: " + this.operation);
     this.prevOperand =
       this.currentOperand.toString() + " " + operation.toString();
     this.currentOperand = "";
