@@ -19,8 +19,8 @@ class Calculator {
   }
   appendNumber(number) {
     alert("clicked a number!!");
-    this.currentOperand = this.currentOperand.toString() + number.toString();
-    alert(this.currentOperand);
+    this.currentOperand += number.toString();
+    console.log("current operand: " + this.currentOperand);
   }
   calculate() {
     alert("calculating!");
@@ -64,7 +64,7 @@ equalsButton.addEventListener("click", (button) => {
 const numButtons = document.querySelectorAll("[data-number");
 numButtons.forEach((numButton) => {
   numButton.addEventListener("click", (button) => {
-    calculator.appendNumber(button.innerText);
+    calculator.appendNumber(numButton.innerText);
     calculator.updateDisplay();
   });
 });
