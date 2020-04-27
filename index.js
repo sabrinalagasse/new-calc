@@ -15,7 +15,6 @@ class Calculator {
     this.currentOperandElement.innerText = this.currentOperand;
   }
   del() {
-    alert("deleting!");
   }
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) {
