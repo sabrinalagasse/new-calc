@@ -18,7 +18,9 @@ class Calculator {
     alert("deleting!");
   }
   appendNumber(number) {
-    alert("clicked a number!!");
+    if (number === "." && this.currentOperand.includes(".")) {
+      return;
+    }
     this.currentOperand += number.toString();
     console.log("current operand: " + this.currentOperand);
   }
