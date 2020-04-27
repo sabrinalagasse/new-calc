@@ -22,13 +22,16 @@ class Calculator {
       return;
     }
     this.currentOperand += number.toString();
-    console.log("current operand: " + this.currentOperand);
   }
   calculate() {
     alert("calculating!");
   }
-  chooseOperation() {
-    alert("clicked an operation!");
+  chooseOperation(operation) {
+    this.operation = operation;
+    this.prevOperand =
+      this.currentOperand.toString() + " " + operation.toString();
+    this.currentOperand = "";
+    this.updateDisplay();
   }
 }
 
@@ -73,7 +76,7 @@ numButtons.forEach((numButton) => {
 const operationButtons = document.querySelectorAll("[data-operation]");
 operationButtons.forEach((operationButton) => {
   operationButton.addEventListener("click", (button) => {
-    calculator.chooseOperation();
+    calculator.chooseOperation(operationButton.innerText);
     calculator.updateDisplay();
   });
 });
