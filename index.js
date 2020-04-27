@@ -37,7 +37,6 @@ class Calculator {
         break;
       case "+":
         result = prev + current;
-        alert(result);
         break;
       case "-":
         result = prev - current;
