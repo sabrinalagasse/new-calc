@@ -46,10 +46,13 @@ class Calculator {
     this.currentOperand = result;
   }
   chooseOperation(operation) {
-    this.operation = operation.toString();
-    console.log("operation: " + this.operation);
+    if (this.prevOperand != "") {
+      this.calculate();
+    }
+
+    this.operation = operation.toString(); //convert operation to a string
     this.prevOperand =
-      this.currentOperand.toString() + " " + operation.toString();
+      this.currentOperand.toString() + " " + operation.toString(); //concat to current operand
     this.currentOperand = "";
     this.updateDisplay();
   }
