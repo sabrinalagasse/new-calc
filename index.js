@@ -5,23 +5,46 @@ class Calculator {
     this.allClear();
   }
 
+  //set values to defaults
   allClear() {
-    this.prevOperand = "";
-    this.currentOperand = "";
-    this.operation = undefined;
+    this.prevOperand = ""; //previous operand
+    this.currentOperand = ""; //current operand
+    this.operation = undefined; //operation to perform
+    this.isResult = false; //if current operant is result of calculation
   }
+
+  //display previous and current operand in page
   updateDisplay() {
     this.prevOperandElement.innerText = this.prevOperand;
     this.currentOperandElement.innerText = this.currentOperand;
   }
+
+  //cut off last character
   del() {
+    this.currentOperand = this.currentOperand.slice(0, -1);
   }
+
+  //add number to operand
   appendNumber(number) {
-    if (number === "." && this.currentOperand.includes(".")) {
-      return;
+    //if number currently displayed is the result of a calculation,
+    //clear the calculator and start new
+    if (this.isResult) {
+      this.allClear();
+      this.isResult = false;
+    }
+
+    if (number === ".") {
+      if (this.currentOperand.includes(".")) {
+        return; //don't add more than 1 '.'
+      } else if (this.currentOperand == "") {
+        this.currentOperand += "0.";
+        return;
+      }
     }
     this.currentOperand += number.toString();
   }
+
+  //perform the calculation
   calculate() {
     let prev = parseFloat(this.prevOperand);
     let current = parseFloat(this.currentOperand);
@@ -40,10 +63,16 @@ class Calculator {
       case "-":
         result = prev - current;
         break;
+      case undefined:
+        result = current;
     }
+
     this.prevOperand = "";
     this.currentOperand = result;
+    this.isResult = true; //current operand is result of calculation
   }
+
+  //get the operation for calculation
   chooseOperation(operation) {
     if (this.prevOperand != "") {
       this.calculate();
@@ -53,6 +82,7 @@ class Calculator {
     this.prevOperand =
       this.currentOperand.toString() + " " + operation.toString(); //concat to current operand
     this.currentOperand = "";
+    this.isResult = false; //operand is not direct result of calculation
     this.updateDisplay();
   }
 }
