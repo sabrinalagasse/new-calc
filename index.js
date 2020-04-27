@@ -32,8 +32,6 @@ class Calculator {
   }
 }
 
-alert("this is some joovooscropt!");
-
 //get previous and current operand elements
 const prevOperandElement = document.querySelector("#previous-operand");
 const currentOperandElement = document.querySelector("#current-operand");
