@@ -74,6 +74,9 @@ class Calculator {
 
   //get the operation for calculation
   chooseOperation(operation) {
+    if (this.currentOperand == "") {
+      return;
+    }
     if (this.prevOperand != "") {
       this.calculate();
     }
