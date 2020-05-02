@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my cute lil calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="common-style.css" />
+    <link rel="stylesheet" type="text/css" href="blue.css" id="colorstyle" />
+    <script type="text/javascript">
+      function swapStyleSheet(sheet) {
+        document.getElementById("colorstyle").setAttribute("href", sheet);
+      }
+    </script>
   </head>
   <body>
     <div id="calc">
@@ -31,7 +37,10 @@
       <button data-number>0</button>
       <button class="span-2" data-equals>=</button>
     </div>
-
+    <div id="style-togglers">
+      <button onclick="swapStyleSheet('blue.css')">Blue Mode</button>
+      <button onclick="swapStyleSheet('pink.css')">Pink Mode</button>
+    </div>
     <footer>
       <p>
         Thanks for checking out my calculator! This project inspired by
@@ -54,6 +63,6 @@
         <a href="https://twitter.com/SabrinaLaGasse" target="_blank">Twitter</a>
       </p>
     </footer>
-    <script src="index.js"></script>
+    <script src="calculator.js"></script>
   </body>
 </html>
