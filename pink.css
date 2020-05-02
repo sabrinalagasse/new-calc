@@ -1,0 +1,10 @@
+body, html {
+    background-image: linear-gradient(to right, #ffcfd2, #d667a4);
+}
+button {
+    background-color: rgba(224, 71, 158, 0.5);
+}
+
+button:hover {
+    background-color: rgba(224, 71, 158, 0.7);
+  }
