@@ -46,6 +46,16 @@ button {
 .span-2 {
   grid-column: span 2;
 }
+#style-togglers {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+#style-togglers > button {
+  font-size: 1rem;
+  padding: 1rem;
+}
 
 footer {
   text-align: center;
