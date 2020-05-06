@@ -93,7 +93,6 @@ class Calculator {
       this.currentOperand.toString() + " " + operation.toString(); //concat to current operand
     this.currentOperand = "";
     this.isResult = false; //operand is not direct result of calculation
-    this.updateDisplay();
   }
 }
 
