@@ -149,12 +149,18 @@ function pressedKey(e) {
     console.log("true");
     calculator.appendNumber(e.key);
     calculator.updateDisplay();
-  }
   else if (keycode == 67) {
     calculator.allClear();
     calculator.updateDisplay();
   }
 
+  //DELETE
+  else if (keycode == 46) {
+    calculator.del();
+    calculator.updateDisplay();
+  }
+  //OPERATIONS
+  //EQUALS
 }
 
 window.addEventListener("keydown", pressedKey);
