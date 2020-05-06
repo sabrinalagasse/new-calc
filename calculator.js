@@ -140,3 +140,22 @@ operationButtons.forEach((operationButton) => {
     calculator.updateDisplay();
   });
 });
+
+//KEYDOWN FUNCTIONALITY
+function pressedKey(e) {
+  //numbers and .
+  if ((keycode >= 48 && keycode <= 57) ||
+      keycode == 190) {
+    console.log("true");
+    calculator.appendNumber(e.key);
+    calculator.updateDisplay();
+  }
+  else if (keycode == 67) {
+    calculator.allClear();
+    calculator.updateDisplay();
+  }
+
+}
+
+window.addEventListener("keydown", pressedKey);
+
