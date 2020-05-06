@@ -50,6 +50,10 @@ button:hover {
 .span-2 {
   grid-column: span 2;
 }
+span {
+  font-size: 10px;
+  color: red;
+}
 
 footer {
   text-align: center;
