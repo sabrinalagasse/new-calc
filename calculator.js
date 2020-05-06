@@ -143,17 +143,20 @@ operationButtons.forEach((operationButton) => {
 
 //KEYDOWN FUNCTIONALITY
 function pressedKey(e) {
-  //numbers and .
+  let keycode = e.keyCode;
+
+  //numbers
   if ((keycode >= 48 && keycode <= 57) ||
       keycode == 190) {
     console.log("true");
     calculator.appendNumber(e.key);
     calculator.updateDisplay();
+  } 
+  //ALL CLEAR 
   else if (keycode == 67) {
     calculator.allClear();
     calculator.updateDisplay();
   }
-
   //DELETE
   else if (keycode == 46) {
     calculator.del();
