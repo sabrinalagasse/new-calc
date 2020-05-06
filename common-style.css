@@ -42,7 +42,10 @@ button {
   border: solid 1px white;
   font-size: 2rem;
 }
-
+span {
+  display: block;
+  font-size: 0.7rem;
+}
 .span-2 {
   grid-column: span 2;
 }
