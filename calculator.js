@@ -57,9 +57,11 @@ class Calculator {
 
     switch (this.operation) {
       case "÷":
+      case "/":
         result = prev / current;
         break;
       case "x":
+      case "*":
         result = prev * current;
         break;
       case "+":
