@@ -145,14 +145,6 @@ operationButtons.forEach((operationButton) => {
 //KEYDOWN FUNCTIONALITY
 function pressedKey(e) {
   }
-  //DELETE
-  else if (keycode == 46) {
-    calculator.del();
-    calculator.updateDisplay();
-  }
-  //OPERATIONS
-  //EQUALS
 }
 
 window.addEventListener("keydown", pressedKey);
-
