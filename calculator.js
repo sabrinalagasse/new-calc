@@ -57,9 +57,11 @@ class Calculator {
 
     switch (this.operation) {
       case "÷":
+      case "/":
         result = prev / current;
         break;
       case "x":
+      case "*":
         result = prev * current;
         break;
       case "+":
@@ -91,7 +93,6 @@ class Calculator {
       this.currentOperand.toString() + " " + operation.toString(); //concat to current operand
     this.currentOperand = "";
     this.isResult = false; //operand is not direct result of calculation
-    this.updateDisplay();
   }
 }
 
@@ -140,3 +141,53 @@ operationButtons.forEach((operationButton) => {
     calculator.updateDisplay();
   });
 });
+
+//KEYDOWN FUNCTIONALITY
+function pressedKey(e) {
+  let key = e.key;
+  console.log("key: " + key);
+  console.log(typeof key);
+
+  switch (key) {
+    //numbers
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+    case "0":
+    case ".":
+      calculator.appendNumber(e.key);
+      calculator.updateDisplay();
+      break;
+    //all clear
+    case "c":
+      calculator.allClear();
+      calculator.updateDisplay();
+      break;
+    //delete
+    case "Delete":
+      calculator.del();
+      calculator.updateDisplay();
+      break;
+    //operations
+    case "+":
+    case "-":
+    case "x":
+    case "*":
+    case "/":
+      calculator.chooseOperation(e.key);
+      calculator.updateDisplay();
+      break;
+    case "=":
+    case "Enter":
+      calculator.calculate();
+      calculator.updateDisplay();
+  }
+}
+
+window.addEventListener("keydown", pressedKey);
