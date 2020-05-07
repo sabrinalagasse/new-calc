@@ -145,8 +145,6 @@ operationButtons.forEach((operationButton) => {
 //KEYDOWN FUNCTIONALITY
 function pressedKey(e) {
   let key = e.key;
-  console.log("key: " + key);
-  console.log(typeof key);
 
   switch (key) {
     //numbers
